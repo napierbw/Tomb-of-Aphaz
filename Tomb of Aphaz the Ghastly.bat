@@ -678,6 +678,31 @@ if %answer%==3 goto Wolf_Fight2
 if %answer%==4 goto Wolf_Chase
 goto Door1_Help
 :Wolf_Fight1
+cls
+echo Health: %player_health%     Attack: %player_attack%
+echo The wolf takes %player_attack% damage!
+SET /A wolf_health = %wolf_health% - %player_attack%
+echo You take 4 damage!
+SET /A player_health = %player_health% - 4
+echo You must select 1.
+echo Health: %player_health%     Attack: %player_attack%
+echo The wolf strikes swiftly. 
+echo TDDDTTT
+echo T     T
+echo T     T
+echo T     T
+echo T  0  T
+echo T  W  T
+echo T     T
+echo T     T
+echo T     T
+echo T     T
+echo T     T
+echo TTTTTTT
+echo.
+set /p answer=Do you fight back (1) or run to the entrance of the tomb (2)?
+if %answer%==1 goto Wolf_Fight1
+goto Forest_Wait_Help
 :Wolf_Fight2
 :Wolf_Chase
 :Door2
